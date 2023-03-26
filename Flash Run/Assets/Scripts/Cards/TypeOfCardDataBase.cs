@@ -17,7 +17,8 @@ public enum ETypeOfCards
     MiniGame,
     ExplodingCard,
     BoostSpeed,
-    TestCard
+    TestCard,
+    TestCard2
 }
 
 [Serializable]

@@ -15,3 +15,5 @@ MonoBehaviour:
   card:
   - card: {fileID: 983861589387197675, guid: a4917a54194b6cf429ac548c8233a5da, type: 3}
     typeOfCard: 5
+  - card: {fileID: 1397806946926268532, guid: b244ed919ef1bd2489aaeb499faa9db3, type: 3}
+    typeOfCard: 6

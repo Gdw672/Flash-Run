@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6305688108506692218}
   - component: {fileID: 7754415508885412018}
   - component: {fileID: -8820129714637005643}
+  - component: {fileID: -4945487178607707393}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -48,6 +49,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: -8820129714637005643}
+  - {fileID: -4945487178607707393}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 1
   _editorReflectionBakingCoverageMode: 0
@@ -75,3 +77,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfCardDataBase: {fileID: 11400000, guid: 56b7704669403a64eba73d928437a74a, type: 2}
+--- !u!114 &-4945487178607707393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 419597531948883621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18c80fadd50985346b092f56a3221ecd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
