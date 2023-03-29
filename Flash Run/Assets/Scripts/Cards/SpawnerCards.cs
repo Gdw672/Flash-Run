@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
-
 public class SpawnerCards : MonoBehaviour
 {
     [Inject] private ITypeOfCardDataBase _typeOfCardDataBase;
     [Inject] private ICardGeneratorService _cardGeneratorService;
+    [Inject] private IColldawnService _colldawnService;
     internal Card[] cards;
     int test = 0;
 
@@ -23,13 +23,19 @@ public class SpawnerCards : MonoBehaviour
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                if(!_colldawnService.GetColldawnStatus())
+                {
+                   Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+  
+                     var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), Quaternion.identity);
+                    /*  var Rigidbosdy = prefabTest.GetComponent<Rigidbody>();
+                      Rigidbosdy.AddForce(ray.direction * 10, ForceMode.Impulse);*/
+                    prefabTest.GetComponent<CardSpawn>().SetDirection(ray.direction, _colldawnService);
+                    test++;
 
-             
-                var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), Quaternion.identity);
-                var Rigidbosdy = prefabTest.GetComponent<Rigidbody>();
-                Rigidbosdy.AddForce(ray.direction * 10, ForceMode.Impulse);
-                test++;
+
+                }
+               
 
             }
         }
