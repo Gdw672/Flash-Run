@@ -2,15 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CardSpawn : AbstractCard
+public class RocketCard : AbstractCard
 {
     public override void CardEffect()
     {
         var rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(_direction * 10, ForceMode.Impulse);
+        rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
         StartCoroutine(_colldawnService.CooldawnForTime());
-        transform.localEulerAngles = Vector3.zero;
+      
     }
 
-  
+    private void FixedUpdate()
+    {
+        if(Input.touchCount > 0)
+        {
+        }
+    }
 }
+

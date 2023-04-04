@@ -27,10 +27,9 @@ public class SpawnerCards : MonoBehaviour
                 {
                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
   
-                     var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), Quaternion.identity);
-                    /*  var Rigidbosdy = prefabTest.GetComponent<Rigidbody>();
-                      Rigidbosdy.AddForce(ray.direction * 10, ForceMode.Impulse);*/
-                    prefabTest.GetComponent<CardSpawn>().SetDirection(ray.direction, _colldawnService);
+                     var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), cards[test].card.transform.rotation);
+                 
+                    prefabTest.GetComponent<RocketCard>().SetDirection(ray.direction, _colldawnService);
                     test++;
 
 
