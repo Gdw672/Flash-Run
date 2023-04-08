@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CardSpawn : AbstractCard
 {
-    public override void CardEffect()
+    protected override void MoveCardStart()
     {
         var rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(_direction * 10, ForceMode.Impulse);

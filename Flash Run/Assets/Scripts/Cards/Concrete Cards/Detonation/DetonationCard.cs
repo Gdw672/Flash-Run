@@ -2,21 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketCard : AbstractCard
+public class DetonationCard : AbstractCard
 {
-    public override void CardEffect()
+    internal override void CardEffect()
     {
         var rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
         StartCoroutine(_colldawnService.CooldawnForTime());
-      
     }
 
-    private void FixedUpdate()
+    private void OnCollisionEnter(Collision collision)
     {
-        if(Input.touchCount > 0)
-        {
-        }
+        print("DET CARD ACTIVATE");
     }
 }
-

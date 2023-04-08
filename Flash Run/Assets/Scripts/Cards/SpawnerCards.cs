@@ -7,6 +7,7 @@ public class SpawnerCards : MonoBehaviour
     [Inject] private ITypeOfCardDataBase _typeOfCardDataBase;
     [Inject] private ICardGeneratorService _cardGeneratorService;
     [Inject] private IColldawnService _colldawnService;
+    [Inject] protected IExistCardsService _existCardsService;
     internal Card[] cards;
     int test = 0;
 
@@ -23,19 +24,19 @@ public class SpawnerCards : MonoBehaviour
         {
             if (Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                if(!_colldawnService.GetColldawnStatus())
+                if(!_colldawnService.GetColldawnStatus() && !_existCardsService.CheckStatusCard())
                 {
                    Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
   
                      var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), cards[test].card.transform.rotation);
                  
-                    prefabTest.GetComponent<RocketCard>().SetDirection(ray.direction, _colldawnService);
+                    prefabTest.GetComponent<RocketCard>().GetValues(ray.direction, _colldawnService, _existCardsService);
                     test++;
-
-
                 }
-               
-
+                if(_existCardsService.CheckStatusCard())
+                {
+                    _existCardsService.DestroyRocket();
+                }
             }
         }
     }

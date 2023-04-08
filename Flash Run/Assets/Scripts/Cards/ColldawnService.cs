@@ -10,6 +10,15 @@ public class ColldawnService : IColldawnService
         return cooldawn;
     }
 
+    public void CooldawnTillDestroy()
+    {
+        cooldawn = true;
+    }
+    public void CancelCooldawn()
+    {
+        cooldawn = false;
+    }
+
     public IEnumerator CooldawnForTime()
     {
         cooldawn = true;
@@ -23,5 +32,7 @@ public class ColldawnService : IColldawnService
 public interface IColldawnService
 {
     public bool GetColldawnStatus();
+    public void CooldawnTillDestroy();
+    public void CancelCooldawn();
     public IEnumerator CooldawnForTime();
 }
