@@ -15,7 +15,7 @@ public enum ETypeOfCards
     Rocket,
     Stone,
     MiniGame,
-    ExplodingCard,
+    Detonation,
     BoostSpeed,
     TestCard,
     TestCard2

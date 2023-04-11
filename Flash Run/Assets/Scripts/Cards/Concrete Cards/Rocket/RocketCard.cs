@@ -8,8 +8,7 @@ public class RocketCard : AbstractCard
     [SerializeField] private Vector3 _explosionSize;
     protected override void MoveCardStart()
     {
-        var rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
+        _rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
         _colldawnService.CooldawnTillDestroy();
     }
     internal override void CardEffect()
@@ -31,11 +30,6 @@ public class RocketCard : AbstractCard
         yield return new WaitForSeconds(0.4f);
         Destroy(gameObject);
         _colldawnService.CancelCooldawn();
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        CardEffect();
     }
     private void OnEnable()
     {

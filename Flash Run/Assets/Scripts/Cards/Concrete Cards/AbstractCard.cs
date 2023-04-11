@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class AbstractCard : MonoBehaviour
 {
+    [SerializeField] protected Rigidbody _rigidbody;
     protected IColldawnService _colldawnService;
     protected IExistCardsService _existCardsService;
     protected Vector3 _direction;

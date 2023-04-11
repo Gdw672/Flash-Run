@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class DetonationCard : AbstractCard
 {
+    protected override void MoveCardStart()
+    {
+      _rigidbody.AddForce(_direction * 8, ForceMode.Impulse);
+        StartCoroutine(_colldawnService.CooldawnForTime());
+    }
+
     internal override void CardEffect()
     {
-        var rigidbody = GetComponent<Rigidbody>();
-        rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
-        StartCoroutine(_colldawnService.CooldawnForTime());
+        
+    }
+
+    private void FixedUpdate()
+    {
+       // _rigidbody.velocity = transform.TransformDirection(_direction * 10);
     }
 
     private void OnCollisionEnter(Collision collision)

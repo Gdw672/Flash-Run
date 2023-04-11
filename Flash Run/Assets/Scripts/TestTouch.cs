@@ -21,7 +21,6 @@ public class TestTouch : MonoBehaviour
                 RaycastHit raycastHit;
                 if (Physics.Raycast(ray, out raycastHit))
                 {
-                  print(  raycastHit.collider.gameObject.name);
                 }
             }
         }

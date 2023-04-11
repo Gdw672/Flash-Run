@@ -30,7 +30,7 @@ public class SpawnerCards : MonoBehaviour
   
                      var prefabTest = Instantiate(cards[test].card, new Vector3(ray.origin.x, ray.origin.y, ray.origin.z), cards[test].card.transform.rotation);
                  
-                    prefabTest.GetComponent<RocketCard>().GetValues(ray.direction, _colldawnService, _existCardsService);
+                    prefabTest.GetComponent<AbstractCard>().GetValues(ray.direction, _colldawnService, _existCardsService);
                     test++;
                 }
                 if(_existCardsService.CheckStatusCard())
