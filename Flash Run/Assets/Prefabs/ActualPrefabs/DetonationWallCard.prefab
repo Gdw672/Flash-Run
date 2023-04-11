@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 965209641231549501}
   - component: {fileID: 965209641231549500}
   - component: {fileID: 965209641231549503}
+  - component: {fileID: 2800923494013870215}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -29,9 +30,10 @@ Transform:
   m_GameObject: {fileID: 965209641231549634}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.017565126, y: 0.15327264, z: 0.13011347}
+  m_LocalScale: {x: 1, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2621019361353952277}
   m_Father: {fileID: 965209642009076992}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -114,6 +116,19 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2800923494013870215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965209641231549634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0ce6c8bbfe11914094c5ef17341cbab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card: {fileID: 7846336856863929710}
 --- !u!1 &965209642009076999
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 965209642009076999}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.01756513, y: 0.1532726, z: 0.1301135}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 965209641231549635}
@@ -160,3 +175,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 965209641231549503}
+  _collider: {fileID: 5524612265424787367}
+  cardObject: {fileID: 965209641231549634}
+  _speedRotate: 100
+--- !u!1 &983651717434303655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2621019361353952277}
+  - component: {fileID: 5524612265424787367}
+  m_Layer: 0
+  m_Name: ExplosionCollider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2621019361353952277
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983651717434303655}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 965209641231549635}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &5524612265424787367
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983651717434303655}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}

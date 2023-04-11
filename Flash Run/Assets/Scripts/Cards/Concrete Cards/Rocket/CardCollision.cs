@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RocketCollision : MonoBehaviour
+public class CardCollision : MonoBehaviour
 {
-    [SerializeField] private RocketCard _rocketCard;
+    [SerializeField] private AbstractCard card;
 
     private void OnCollisionEnter(Collision collision)
     {
-        _rocketCard.CardEffect();
+        card.CardEffect();
     }
 }
