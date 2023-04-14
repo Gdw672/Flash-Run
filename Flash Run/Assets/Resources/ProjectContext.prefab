@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typeOfCardDataBase: {fileID: 11400000, guid: 56b7704669403a64eba73d928437a74a, type: 2}
+  obstructionsDataBase: {fileID: 11400000, guid: 63a72d491cdd9854882aa7e64e4ebd89, type: 2}
 --- !u!114 &-4945487178607707393
 MonoBehaviour:
   m_ObjectHideFlags: 0

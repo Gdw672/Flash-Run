@@ -18,6 +18,12 @@ public class DetonationCard : AbstractCard
     {
         cardObject.transform.Rotate(_speedRotate * Time.deltaTime, 0, 0);
     }
+    
+    private IEnumerator DestroyCard()
+    {
+        yield return new WaitForSeconds(0.2f);
+        Destroy(gameObject);
+    }
 
     internal override void CardEffect()
     {
@@ -25,5 +31,11 @@ public class DetonationCard : AbstractCard
         _speedRotate = 0;
         _collider.gameObject.SetActive(true);
         _collider.transform.DOScale(5f, 0.2f);
+        StartCoroutine(DestroyCard());
+    }
+
+    private void OnDestroy()
+    {
+        _colldawnService.CancelCooldawn();
     }
 }

@@ -9,5 +9,6 @@ public class CardCollision : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         card.CardEffect();
+        Destroy(collision.gameObject);
     }
 }
