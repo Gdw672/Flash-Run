@@ -8,7 +8,7 @@ public class RocketCard : AbstractCard
     [SerializeField] private Vector3 _explosionSize;
     protected override void MoveCardStart()
     {
-        _rigidbody.AddForce(_direction * 20, ForceMode.Impulse);
+        _rigidbody.AddForce(_direction * 45, ForceMode.Impulse);
         _colldawnService.CooldawnTillDestroy();
     }
     internal override void CardEffect()

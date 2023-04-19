@@ -8,7 +8,6 @@ public class SpawnerCards : MonoBehaviour
     [Inject] private ICardGeneratorService _cardGeneratorService;
     [Inject] private IColldawnService _colldawnService;
     [Inject] protected IExistCardsService _existCardsService;
-    [Inject] private IObstructionGeneratorService obstructionGeneratorService;
     internal Card[] cards;
     int test = 0;
 
@@ -16,7 +15,6 @@ public class SpawnerCards : MonoBehaviour
     {
           var x = _cardGeneratorService.GenerateStartKit(_typeOfCardDataBase.Card, 10);
         cards = x.ToArray();
-        obstructionGeneratorService.GenerateObstructions();
     }
 
     private void Update()

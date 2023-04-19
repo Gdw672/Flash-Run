@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-public class ObstructionGeneratorService : IObstructionGeneratorService
+public class ObstructionGeneratorService : MonoBehaviour
 {
     [Inject] private IObstructionsDataBase _obstructionsDataBase;
-    public void GenerateObstructions()
+    private void Start()
     {
-        var x = _obstructionsDataBase.Obstructions.Find(test => test.typeOfObstruction == ETypeOfObstruction.TestObst);
-       UnityEngine.MonoBehaviour.print(x.prefab.name);
+        GenerateObstructions(Camera.main.transform.position, 20);
     }
-    public void test()
+    public void GenerateObstructions(Vector3 playerPos, int numOfObstr)
     {
-        UnityEngine.MonoBehaviour.print("Test");
+        Vector3 obstructionPos = playerPos;
+        for (int i = 0; i < numOfObstr; i++)
+        {
+            if(i == 0)
+            {
+                obstructionPos.z += 12;
+                print(0);
+            }
+            else
+                obstructionPos.z += 4;
+            Instantiate(_obstructionsDataBase.Obstructions.Find(car => car.typeOfObstruction == ETypeOfObstruction.TestObst).prefab, obstructionPos, Quaternion.identity);
+        }
     }
-
-}
-public interface IObstructionGeneratorService
-{
-    public void GenerateObstructions();
-    public void test();
 }
