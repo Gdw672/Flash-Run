@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f35a4ae88aa61fe49b768d97dd8d6abb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 0}
   _collider: {fileID: 7265203634242583074}
   _explosionSize: {x: 5, y: 5, z: 5}
 --- !u!1 &7508480309861174613
