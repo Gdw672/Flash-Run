@@ -18,7 +18,8 @@ public class Obstruction
 
 public enum ETypeOfObstruction
 {
-    TestObst
+    TestObst,
+    Move
 }
 
 public interface IObstructionsDataBase

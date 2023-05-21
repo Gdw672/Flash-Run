@@ -7,5 +7,6 @@ public class ProjectInstaller : MonoInstaller
     {
         Container.BindInterfacesTo<CardGeneratorService>().AsSingle();
         Container.BindInterfacesTo<ObstructionGeneratorService>().AsSingle();
+        Container.BindInterfacesTo<ScoreService>().AsSingle();
     }
 }

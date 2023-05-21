@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class MoveObstruction : MonoBehaviour
+public class MoveObstruction : AbstractObstruction
 {
    [SerializeField] private float _speed;
    [SerializeField] private float _distance;
@@ -16,6 +17,19 @@ public class MoveObstruction : MonoBehaviour
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        var x = Random.Range(1, 3);
+        switch(x)
+        {
+            case (1):
+                _isVertical = true;
+                break;
+            case (2):
+                _isVertical = false;
+                break;
+            default:
+                _isVertical = true;
+                break;
+        }
     }
 
     private void FixedUpdate()
@@ -38,5 +52,9 @@ public class MoveObstruction : MonoBehaviour
                 _distance *= 2;
             }
         }
+    }
+    private void OnDestroy()
+    {
+        _scoreService.PlusScore(20);
     }
 }

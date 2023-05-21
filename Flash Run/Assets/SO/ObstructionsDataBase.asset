@@ -15,3 +15,5 @@ MonoBehaviour:
   obstructions:
   - prefab: {fileID: 7472761212139556107, guid: 981e3e6086d3e614aae9e6221aa79849, type: 3}
     typeOfObstruction: 0
+  - prefab: {fileID: 7689060393969907323, guid: c41c39ed71e68c647ad481d20ec651a6, type: 3}
+    typeOfObstruction: 1
