@@ -55,6 +55,6 @@ public class MoveObstruction : AbstractObstruction
     }
     private void OnDestroy()
     {
-        _scoreService.PlusScore(20);
+        _scoreService?.PlusScore(20);
     }
 }
